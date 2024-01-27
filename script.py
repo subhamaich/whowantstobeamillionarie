@@ -24,6 +24,7 @@ print("The prizes are as follows:\n ")
 score = 0
 cash = 0
 count = 0
+
 for key, value in data.items():
     print(key)
     
@@ -31,22 +32,21 @@ for key, value in data.items():
         print(i+". "+j[count])
     inp = input("Enter option:").upper()
     answer = ""
+    while inp not in options.keys():
+         print("Enter correct option")
+         inp = input("Enter option:").upper()
     if inp in options.keys():
         answer = options[inp][count]
         print(data[key])
         if answer == data[key]:
-             print("Correct")
-             score += 10
-             print(score)
-             count += 1
+            print("Correct")
+            score += 10
+            print(score)
+            count += 1
         else:
-             print("You're out!")
-             break
+            print("You're out!")
+            break
             
-    else:
-        print("Enter correct option")
-        break
-    
     
     
 
